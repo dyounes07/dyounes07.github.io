@@ -13,9 +13,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -23,10 +22,10 @@
 </head>
 
 <body>
-  <header class="navbar">
+  <header class="site-header wrap">
     <a href="#top" class="logo">DY<span>.</span></a>
 
-    <nav>
+    <nav aria-label="Main">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
@@ -44,16 +43,12 @@
   </header>
 
   <main id="top">
-    <section class="hero section-container">
-      <div class="hero-content">
-        <p class="eyebrow">Computer Science at UofT</p>
+    <!-- Hero -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <h1>Hi, I'm Dana. I build robots, security tools, and ML systems.</h1>
 
-        <h1>
-          Hi, I'm Dana.
-          <span>I build robots, security tools, and ML systems.</span>
-        </h1>
-
-        <p class="hero-description">
+        <p class="lede">
           I'm a second-year Computer Science Specialist at the University of
           Toronto, St. George. Right now I'm on UTRA's Autonomous Rover Team,
           helping write our own Extended Kalman Filter so the rover always
@@ -61,11 +56,8 @@
           figuring out how systems fail.
         </p>
 
-        <div class="hero-actions">
-          <a href="#projects" class="button button-primary">
-            See my projects <span>↓</span>
-          </a>
-
+        <div class="actions">
+          <a href="#projects" class="button button-primary">See my projects</a>
           <a
             href="https://www.linkedin.com/in/danayounes"
             target="_blank"
@@ -75,52 +67,73 @@
             LinkedIn ↗
           </a>
         </div>
-
-        <div class="availability">
-          <span class="status-dot"></span>
-          Looking for software engineering internships, especially in
-          robotics, security, or ML
-        </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="visual-card">
-          <div class="terminal-bar">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+      <figure class="drift-figure">
+        <svg
+          viewBox="0 0 480 400"
+          role="img"
+          aria-labelledby="drift-title drift-desc"
+        >
+          <title id="drift-title">Odometry drift</title>
+          <desc id="drift-desc">
+            Two robot paths that start together and slowly separate: the
+            robot's actual path and the path its wheel odometry estimates.
+          </desc>
 
-          <div class="code">
-            <p>
-              probability = model.<span class="orange">predict_proba</span>(input_df)[0, 1]
-            </p>
+          <!-- grid -->
+          <g class="grid-line">
+            <line x1="40" y1="360" x2="440" y2="360" />
+            <line x1="40" y1="280" x2="440" y2="280" />
+            <line x1="40" y1="200" x2="440" y2="200" />
+            <line x1="40" y1="120" x2="440" y2="120" />
+            <line x1="40" y1="40" x2="440" y2="40" />
+            <line x1="40" y1="40" x2="40" y2="360" />
+            <line x1="173" y1="40" x2="173" y2="360" />
+            <line x1="307" y1="40" x2="307" y2="360" />
+            <line x1="440" y1="40" x2="440" y2="360" />
+          </g>
 
-            <p>
-              is_fraud = probability <span class="purple">&gt;=</span>
-              <span class="blue">threshold</span>
-            </p>
+          <!-- where the robot actually went -->
+          <path
+            class="actual-path"
+            pathLength="1"
+            d="M47 360 C120 358, 200 340, 260 308 S350 230, 380 175 S388 100, 353 60"
+          />
 
-            <br />
+          <!-- where odometry thinks it went -->
+          <path
+            class="odom-path"
+            d="M47 360 C120 357, 200 336, 258 302 S340 222, 365 168 S368 88, 333 56"
+          />
 
-            <p class="comment"># the threshold is set per request,</p>
-            <p class="comment"># because a fraud score only matters</p>
-            <p class="comment"># once you decide what to do with it</p>
-          </div>
+          <!-- the gap at the end -->
+          <g class="drift-marker">
+            <line x1="353" y1="60" x2="333" y2="56" />
+            <circle cx="353" cy="60" r="4" class="dot-actual" />
+            <circle cx="333" cy="56" r="4" class="dot-odom" />
+            <text x="272" y="34">drift</text>
+          </g>
 
-          <div class="visual-label">
-            <span class="shield">◈</span>
-            transaction-fraud-detection / app.py
-          </div>
-        </div>
-      </div>
+          <circle cx="47" cy="360" r="5" class="dot-start" />
+          <text x="56" y="384" class="axis-label">start</text>
+        </svg>
+
+        <figcaption>
+          <span class="legend">
+            <span class="swatch swatch-actual"></span> actual path
+            <span class="swatch swatch-odom"></span> odometry estimate
+          </span>
+          Redrawn from my IB math IA, where I simulated how odometry error
+          grows over time. An EKF is how you correct it, which is what I'm
+          working on now.
+        </figcaption>
+      </figure>
     </section>
 
-    <section id="about" class="section-container section">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>A little about me</h2>
-      </div>
+    <!-- About -->
+    <section id="about" class="section wrap">
+      <h2>A little about me</h2>
 
       <div class="about-grid">
         <div class="about-text">
@@ -139,56 +152,52 @@
 
           <p>
             Robots are what I keep coming back to, though. They just move by
-            themselves! Isn't that so cool? These days I'm working on rover
-            localization with UTRA, and building projects in machine learning
-            and security on the side.
+            themselves! Isn't that so cool?
           </p>
         </div>
 
-        <div class="about-facts">
-          <div class="fact-card">
-            <span class="fact-number">Now</span>
+        <ol class="timeline">
+          <li>
+            <span class="when">Now</span>
+            <div>
+              <h3>Rover localization at UTRA</h3>
+              <p>
+                Working on our own local and global EKF in ROS 2 to replace
+                robot_localization.
+              </p>
+            </div>
+          </li>
 
-            <h3>Rover localization</h3>
+          <li>
+            <span class="when">Research</span>
+            <div>
+              <h3>Class group cryptography</h3>
+              <p>
+                Researched IQ-DH with a partner and a PhD mentor, and presented
+                our results to professors and students.
+              </p>
+            </div>
+          </li>
 
-            <p>
-              On UTRA's Autonomous Rover Team, working on our own local and
-              global EKF in ROS 2 to replace robot_localization.
-            </p>
-          </div>
-
-          <div class="fact-card">
-            <span class="fact-number">Research</span>
-
-            <h3>Class group cryptography</h3>
-
-            <p>
-              Researched IQ-DH with a partner and a PhD mentor, and presented
-              our results to professors and students.
-            </p>
-          </div>
-
-          <div class="fact-card">
-            <span class="fact-number">High school</span>
-
-            <h3>Where the robots started</h3>
-
-            <p>
-              Programmed autonomous and driver control for my school's rookie
-              FTC team in Java, and modelled odometry drift for my IB math IA.
-            </p>
-          </div>
-        </div>
+          <li>
+            <span class="when">High school</span>
+            <div>
+              <h3>Where the robots started</h3>
+              <p>
+                Programmed autonomous and driver control for my school's rookie
+                FTC team in Java, and modelled odometry drift for my IB math
+                IA.
+              </p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section id="projects" class="section-container section">
-      <div class="section-heading projects-heading">
-        <div>
-          <p class="eyebrow">Projects</p>
-          <h2>Things I've built</h2>
-        </div>
-
+    <!-- Projects -->
+    <section id="projects" class="section wrap">
+      <div class="projects-heading">
+        <h2>Things I've built</h2>
         <a
           class="text-link"
           href="https://github.com/dyounes07?tab=repositories"
@@ -199,213 +208,218 @@
         </a>
       </div>
 
-      <div class="projects-grid">
-        <article class="project-card featured-project">
-          <div class="project-top">
-            <span class="project-icon">+</span>
-            <span class="project-type">Machine learning</span>
+      <div class="project-list">
+        <article class="project featured">
+          <div class="project-name">
+            <h3>Transaction Fraud Detection</h3>
+            <p class="kind">Machine learning</p>
           </div>
 
-          <h3>Transaction Fraud Detection</h3>
-
-          <p>
-            An end-to-end fraud detector trained on 284,807 real card
-            transactions, where only 0.17% are fraud. A model that calls
-            everything legitimate scores 99.8% accuracy and catches nothing,
-            so I evaluated with precision, recall, and PR-AUC instead.
-          </p>
-
-          <p>
-            I compared a logistic regression baseline with XGBoost, then served
-            the XGBoost model through a Flask API that validates input and lets
-            each request set its own risk threshold. On held-out data it caught
-            84% of fraud with 92% precision. It's been my favourite project!!
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>XGBoost</span>
-            <span>scikit-learn</span>
-            <span>Flask</span>
+          <div class="project-desc">
+            <p>
+              An end-to-end fraud detector trained on 284,807 real card
+              transactions, where only 0.17% are fraud. A model that calls
+              everything legitimate scores 99.8% accuracy and catches nothing,
+              so I evaluated with precision, recall, and PR-AUC instead.
+            </p>
+            <p>
+              I compared a logistic regression baseline with XGBoost, then
+              served the XGBoost model through a Flask API that validates input
+              and lets each request set its own risk threshold. On held-out
+              data it caught 84% of fraud with 92% precision. It's been my
+              favourite project!!
+            </p>
           </div>
 
-          <a
-            href="https://github.com/dyounes07/transaction-fraud-detection"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View on GitHub <span>↗</span>
-          </a>
+          <div class="project-meta">
+            <ul class="tags">
+              <li>Python</li>
+              <li>XGBoost</li>
+              <li>scikit-learn</li>
+              <li>Flask</li>
+            </ul>
+            <a
+              class="project-link"
+              href="https://github.com/dyounes07/transaction-fraud-detection"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub ↗
+            </a>
+          </div>
         </article>
 
-        <article class="project-card current-project">
-          <div class="project-top">
-            <span class="project-icon">◎</span>
-            <span class="project-type">Robotics</span>
+        <article class="project">
+          <div class="project-name">
+            <h3>Rover Localization</h3>
+            <p class="kind">Robotics, UTRA</p>
           </div>
 
-          <h3>Rover Localization (UTRA)</h3>
-
-          <p>
-            Wheel odometry drifts over time, so the rover needs to fuse it with
-            other sensors to know where it is. I'm on the team writing our own
-            local and global Extended Kalman Filter in ROS 2 to replace
-            robot_localization.
-          </p>
-
-          <div class="tags">
-            <span>ROS 2</span>
-            <span>State estimation</span>
-            <span>In progress</span>
+          <div class="project-desc">
+            <p>
+              Wheel odometry drifts over time, so the rover needs to fuse it
+              with other sensors to know where it is. I'm on the team writing
+              our own local and global Extended Kalman Filter in ROS 2 to
+              replace robot_localization.
+            </p>
           </div>
 
-          <a
-            href="https://github.com/dyounes07/timbot"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View on GitHub <span>↗</span>
-          </a>
+          <div class="project-meta">
+            <ul class="tags">
+              <li class="tag-live">In progress</li>
+              <li>ROS 2</li>
+              <li>State estimation</li>
+            </ul>
+            <a
+              class="project-link"
+              href="https://github.com/dyounes07/timbot"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub ↗
+            </a>
+          </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-icon">⌁</span>
-            <span class="project-type">Cybersecurity</span>
+        <article class="project">
+          <div class="project-name">
+            <h3>Attack Graph Tool</h3>
+            <p class="kind">Cybersecurity</p>
           </div>
 
-          <h3>Attack Graph Tool</h3>
-
-          <p>
-            Models a network as a graph of systems and vulnerabilities. BFS
-            checks whether an attacker can get from one system to another and
-            finds the fewest-step attack path, and a custom influence score
-            (weighted degree × impact) ranks which nodes matter most to defend.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>Graphs</span>
-            <span>BFS</span>
+          <div class="project-desc">
+            <p>
+              Models a network as a graph of systems and vulnerabilities. BFS
+              checks whether an attacker can get from one system to another and
+              finds the fewest-step attack path, and a custom influence score
+              (weighted degree × impact) ranks which nodes matter most to
+              defend.
+            </p>
           </div>
 
-          <a
-            href="https://github.com/dyounes07/attack-graph-tool"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View on GitHub <span>↗</span>
-          </a>
+          <div class="project-meta">
+            <ul class="tags">
+              <li>Python</li>
+              <li>Graphs</li>
+              <li>BFS</li>
+            </ul>
+            <a
+              class="project-link"
+              href="https://github.com/dyounes07/attack-graph-tool"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub ↗
+            </a>
+          </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-icon">λ</span>
-            <span class="project-type">Cryptography</span>
+        <article class="project">
+          <div class="project-name">
+            <h3>Quadratic Field Cryptography</h3>
+            <p class="kind">Cryptography research</p>
           </div>
 
-          <h3>Quadratic Field Cryptography</h3>
-
-          <p>
-            Research on Diffie–Hellman in the class groups of imaginary
-            quadratic fields. We represented group elements as binary quadratic
-            forms and showed in SageMath that multiplying them is fast, while
-            reversing it (the discrete log problem) stays hard.
-          </p>
-
-          <div class="tags">
-            <span>SageMath</span>
-            <span>Number theory</span>
-            <span>LaTeX</span>
+          <div class="project-desc">
+            <p>
+              Research on Diffie–Hellman in the class groups of imaginary
+              quadratic fields. We represented group elements as binary
+              quadratic forms and showed in SageMath that multiplying them is
+              fast, while reversing it (the discrete log problem) stays hard.
+            </p>
           </div>
 
-          <a
-            href="https://github.com/dyounes07/iq-dh-sagemath"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View on GitHub <span>↗</span>
-          </a>
+          <div class="project-meta">
+            <ul class="tags">
+              <li>SageMath</li>
+              <li>Number theory</li>
+              <li>LaTeX</li>
+            </ul>
+            <a
+              class="project-link"
+              href="https://github.com/dyounes07/iq-dh-sagemath"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub ↗
+            </a>
+          </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-icon">◉</span>
-            <span class="project-type">Security</span>
+        <article class="project">
+          <div class="project-name">
+            <h3>Security Event Risk Dashboard</h3>
+            <p class="kind">Security</p>
           </div>
 
-          <h3>Security Event Risk Dashboard</h3>
-
-          <p>
-            A Flask app for tracking security events and prioritizing them by
-            risk, so the most urgent ones surface first instead of getting lost
-            in raw logs.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>Data visualization</span>
+          <div class="project-desc">
+            <p>
+              A Flask app for tracking security events and prioritizing them by
+              risk, so the most urgent ones surface first instead of getting
+              lost in raw logs.
+            </p>
           </div>
 
-          <a
-            href="https://github.com/dyounes07/security-event-risk-dashboard"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View on GitHub <span>↗</span>
-          </a>
+          <div class="project-meta">
+            <ul class="tags">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>Data visualization</li>
+            </ul>
+            <a
+              class="project-link"
+              href="https://github.com/dyounes07/security-event-risk-dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub ↗
+            </a>
+          </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-icon">▦</span>
-            <span class="project-type">Game</span>
+        <article class="project">
+          <div class="project-name">
+            <h3>Battleship</h3>
+            <p class="kind">Game</p>
           </div>
 
-          <h3>Battleship</h3>
-
-          <p>
-            A Java version of Battleship I built to practise object-oriented
-            design: modelling the board and ships, handling input, and making
-            sure simple rules behave correctly in every edge case.
-          </p>
-
-          <div class="tags">
-            <span>Java</span>
-            <span>OOP</span>
+          <div class="project-desc">
+            <p>
+              A Java version of Battleship I built to practise object-oriented
+              design: modelling the board and ships, handling input, and making
+              sure simple rules behave correctly in every edge case.
+            </p>
           </div>
 
-          <a
-            href="https://github.com/dyounes07/battleship-game"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View on GitHub <span>↗</span>
-          </a>
+          <div class="project-meta">
+            <ul class="tags">
+              <li>Java</li>
+              <li>OOP</li>
+            </ul>
+            <a
+              class="project-link"
+              href="https://github.com/dyounes07/battleship-game"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub ↗
+            </a>
+          </div>
         </article>
       </div>
     </section>
 
-    <section id="skills" class="section-container section skills-section">
-      <div class="section-heading">
-        <p class="eyebrow">Skills</p>
-        <h2>What I work with</h2>
-      </div>
+    <!-- Skills -->
+    <section id="skills" class="section wrap">
+      <h2>What I work with</h2>
 
-      <div class="skills-list">
-        <div class="skill-group">
+      <div class="skills-grid">
+        <div>
           <h3>Languages</h3>
           <p>Python, Java, SQL, JavaScript, SageMath</p>
         </div>
 
-        <div class="skill-group">
+        <div>
           <h3>Frameworks and tools</h3>
           <p>
             ROS 2, Flask, React, scikit-learn, XGBoost, pandas, NumPy, Git,
@@ -413,7 +427,7 @@
           </p>
         </div>
 
-        <div class="skill-group">
+        <div>
           <h3>Learning right now</h3>
           <p>
             State estimation and Kalman filters, robot navigation, reading ML
@@ -423,37 +437,31 @@
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
-      <div class="section-container contact-content">
-        <p class="eyebrow">Contact</p>
-
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="wrap">
         <h2>Want to talk robots, security, or anything in between?</h2>
 
         <p>
           I'm looking for software engineering internships, especially in
-          robotics, security, or ML. I'm also always happy to chat about rovers,
-          cryptography, or a problem you're stuck on.
+          robotics, security, or ML. I'm also always happy to chat about
+          rovers, cryptography, or a problem you're stuck on.
         </p>
 
-        <div class="contact-actions">
-          <a
-            class="button button-primary"
-            href="mailto:danayounes2016@gmail.com"
-          >
+        <div class="actions">
+          <a class="button button-light" href="mailto:danayounes2016@gmail.com">
             Email me
           </a>
-
           <a
-            class="button button-secondary light-button"
+            class="button button-outline"
             href="https://github.com/dyounes07"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub ↗
           </a>
-
           <a
-            class="button button-secondary light-button"
+            class="button button-outline"
             href="https://www.linkedin.com/in/danayounes"
             target="_blank"
             rel="noopener noreferrer"
@@ -465,11 +473,9 @@
     </section>
   </main>
 
-  <footer class="footer section-container">
+  <footer class="site-footer wrap">
     <p>© 2026 Dana Younes</p>
     <p>Toronto, ON</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
