@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Dana Younes is a Computer Science Specialist student at the University of Toronto interested in software engineering, cybersecurity, cryptography, and mathematical problem solving."
+    content="Dana Younes is a second-year Computer Science Specialist at the University of Toronto working on rover localization with UTRA, and building projects in machine learning, cybersecurity, and cryptography."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,25 +46,24 @@
   <main id="top">
     <section class="hero section-container">
       <div class="hero-content">
-        <p class="eyebrow">
-          CS STUDENT · BUILDER · PERPETUALLY CURIOUS
-        </p>
+        <p class="eyebrow">Computer Science at UofT</p>
 
         <h1>
-          I like turning
-          <span>"wait, how does that work?" into working code.</span>
+          Hi, I'm Dana.
+          <span>I build robots, security tools, and ML systems.</span>
         </h1>
 
         <p class="hero-description">
-          Hi, I'm Dana, a second-year Computer Science Specialist student at
-          the University of Toronto, St. George. I'm interested in software
-          engineering, cybersecurity, cryptography, and the problem-solving
-          that connects them all.
+          I'm a second-year Computer Science Specialist at the University of
+          Toronto, St. George. Right now I'm on UTRA's Autonomous Rover Team,
+          helping write our own Extended Kalman Filter so the rover always
+          knows where it is. I also love cryptography, graph problems, and
+          figuring out how systems fail.
         </p>
 
         <div class="hero-actions">
           <a href="#projects" class="button button-primary">
-            View my projects <span>↓</span>
+            See my projects <span>↓</span>
           </a>
 
           <a
@@ -79,7 +78,8 @@
 
         <div class="availability">
           <span class="status-dot"></span>
-          Open to software engineering and cybersecurity internship opportunities
+          Looking for software engineering internships, especially in
+          robotics, security, or ML
         </div>
       </div>
 
@@ -93,26 +93,24 @@
 
           <div class="code">
             <p>
-              <span class="purple">def</span>
-              <span class="orange">influence_score</span>(attack):
+              probability = model.<span class="orange">predict_proba</span>(input_df)[0, 1]
             </p>
 
-            <p class="indent">
-              <span class="purple">return</span>
-              attack.<span class="blue">weighted_degree</span>()
-              * attack.<span class="blue">impact_value</span>
+            <p>
+              is_fraud = probability <span class="purple">&gt;=</span>
+              <span class="blue">threshold</span>
             </p>
 
             <br />
 
-            <p class="comment"># from my Attack Graph Tool</p>
-            <p class="comment"># ranks the most critical attacks</p>
-            <p class="comment"># in a weighted graph via BFS</p>
+            <p class="comment"># the threshold is set per request,</p>
+            <p class="comment"># because a fraud score only matters</p>
+            <p class="comment"># once you decide what to do with it</p>
           </div>
 
           <div class="visual-label">
             <span class="shield">◈</span>
-            curious · technical · persistent
+            transaction-fraud-detection / app.py
           </div>
         </div>
       </div>
@@ -120,87 +118,64 @@
 
     <section id="about" class="section-container section">
       <div class="section-heading">
-        <p class="eyebrow">01 / ABOUT</p>
+        <p class="eyebrow">About</p>
         <h2>A little about me</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-text">
           <p>
-            My interest in computer science started in middle school through
-            SciTech, where I got my first taste of programming with Scratch and
-            LEGO robotics. That early curiosity stuck with me, and I began
-            teaching myself web development and Python through Codecademy when I
-            entered high school.
+            I started coding in middle school with Scratch and LEGO robots at
+            SciTech, then taught myself Python and web development on
+            Codecademy. By Grade 10 I was taking the Grade 12 computer science
+            course alongside older students.
           </p>
 
           <p>
-            In Grade 10, I took both introductory and advanced high school
-            computer science courses, including the Grade 12 course alongside
-            older students. It was challenging, but it gave me an early
-            opportunity to push myself technically and discover how much I
-            enjoyed learning computer science.
+            I've always liked where computer science meets math. That led me to
+            graph theory and cryptography, and eventually to researching
+            quadratic field cryptography with a PhD mentor.
           </p>
 
           <p>
-            I have always enjoyed the intersection of computer science and
-            mathematics. Through enrichment and mentorship programs, I explored
-            graph theory and cryptography. I later researched quadratic field
-            cryptography with a PhD candidate as my mentor and presented our
-            findings using LaTeX to professors, mentors, and other students.
-          </p>
-
-          <p>
-            Outside the classroom, I participated in coding and engineering
-            clubs, worked as an executive with different teams, and joined my
-            school's rookie FTC robotics team. Working with the Java SDK to
-            build and program a robot was one of the experiences that showed me
-            how much I enjoy turning ideas into something tangible.
-          </p>
-
-          <p>
-            I'm now entering my second year as a Computer Science Specialist
-            student at the University of Toronto, St. George. I'm especially
-            interested in cybersecurity because it combines the things I enjoy
-            most: understanding complex systems, thinking carefully about how
-            they can fail, and designing better solutions.
+            Robots are what I keep coming back to, though. They just move by
+            themselves! Isn't that so cool? These days I'm working on rover
+            localization with UTRA, and building projects in machine learning
+            and security on the side.
           </p>
         </div>
 
         <div class="about-facts">
           <div class="fact-card">
-            <span class="fact-number">01</span>
+            <span class="fact-number">Now</span>
 
-            <h3>Started young</h3>
+            <h3>Rover localization</h3>
 
             <p>
-              First wrote code in middle school at SciTech with Scratch and
-              LEGO robotics, then taught myself Python and web development
-              before high school even started.
+              On UTRA's Autonomous Rover Team, working on our own local and
+              global EKF in ROS 2 to replace robot_localization.
             </p>
           </div>
 
           <div class="fact-card">
-            <span class="fact-number">02</span>
+            <span class="fact-number">Research</span>
 
-            <h3>Presented real research</h3>
+            <h3>Class group cryptography</h3>
 
             <p>
-              Researched quadratic field cryptography under a PhD mentor and
-              presented findings on the IQ-DH algorithm to professors and
-              students using LaTeX.
+              Researched IQ-DH with a partner and a PhD mentor, and presented
+              our results to professors and students.
             </p>
           </div>
 
           <div class="fact-card">
-            <span class="fact-number">03</span>
+            <span class="fact-number">High school</span>
 
-            <h3>Built a robot</h3>
+            <h3>Where the robots started</h3>
 
             <p>
-              Joined my school's rookie FTC robotics team and used the Java
-              SDK to program autonomous and teleoperated control, including
-              hardware testing.
+              Programmed autonomous and driver control for my school's rookie
+              FTC team in Java, and modelled odometry drift for my IB math IA.
             </p>
           </div>
         </div>
@@ -210,8 +185,8 @@
     <section id="projects" class="section-container section">
       <div class="section-heading projects-heading">
         <div>
-          <p class="eyebrow">02 / SELECTED WORK</p>
-          <h2>Projects I've built</h2>
+          <p class="eyebrow">Projects</p>
+          <h2>Things I've built</h2>
         </div>
 
         <a
@@ -220,156 +195,38 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          View all repositories ↗
+          All repositories ↗
         </a>
       </div>
 
       <div class="projects-grid">
         <article class="project-card featured-project">
           <div class="project-top">
-            <span class="project-icon">◉</span>
-            <span class="project-type">SECURITY / DATA</span>
-          </div>
-
-          <h3>Security Event Risk Dashboard</h3>
-
-          <p>
-            I built this project to explore how security event data can be
-            organized into something easier to interpret. The dashboard focuses
-            on visualizing events and highlighting potentially higher-risk
-            activity instead of leaving the user to sort through raw data
-            alone.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>Data Visualization</span>
-            <span>Security</span>
-          </div>
-
-          <a
-            href="https://github.com/dyounes07/security-event-risk-dashboard"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View project <span>↗</span>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-icon">⌁</span>
-            <span class="project-type">CYBERSECURITY</span>
-          </div>
-
-          <h3>Attack Graph Tool</h3>
-
-          <p>
-            This project grew out of my interest in graph theory and
-            cybersecurity. It represents relationships between system states,
-            vulnerabilities, and attack paths to make the structure of a
-            possible attack easier to reason about.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>Graphs</span>
-            <span>Security</span>
-          </div>
-
-          <a
-            href="https://github.com/dyounes07/attack-graph-tool"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View project <span>↗</span>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-icon">λ</span>
-            <span class="project-type">CRYPTOGRAPHY</span>
-          </div>
-
-          <h3>Cryptography / IQ-DH</h3>
-
-          <p>
-            This project connects directly to my interest in mathematical
-            cryptography. I used SageMath to explore the ideas behind IQ-DH and
-            work with concepts that become easier to understand once the
-            underlying mathematics is made concrete.
-          </p>
-
-          <div class="tags">
-            <span>SageMath</span>
-            <span>Cryptography</span>
-            <span>Mathematics</span>
-          </div>
-
-          <a
-            href="https://github.com/dyounes07/iq-dh-sagemath"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View project <span>↗</span>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <span class="project-icon">▦</span>
-            <span class="project-type">APPLICATION</span>
-          </div>
-
-          <h3>Battleship Game</h3>
-
-          <p>
-            I built this Battleship game to practice designing a complete
-            interactive application in Java. It gave me a practical way to
-            work with object-oriented programming, game state, input handling,
-            and the small details that make simple rules behave correctly.
-          </p>
-
-          <div class="tags">
-            <span>Java</span>
-            <span>OOP</span>
-            <span>Game Logic</span>
-          </div>
-
-          <a
-            href="https://github.com/dyounes07/battleship-game"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-link"
-          >
-            View project <span>↗</span>
-          </a>
-        </article>
-
-        <article class="project-card current-project">
-          <div class="project-top">
             <span class="project-icon">+</span>
-            <span class="project-type">ML &amp; CYBERSECURITY</span>
+            <span class="project-type">Machine learning</span>
           </div>
 
-          <h3>Transaction Fraud Detector</h3>
+          <h3>Transaction Fraud Detection</h3>
 
           <p>
-            I built this fraud detection project to understand the complete
-            machine learning workflow, from preparing an imbalanced dataset
-            and comparing models to deploying predictions through a Flask API.
-            The XGBoost model achieved an 87.70% fraud F1-score, and the
-            project helped me connect data science with practical threat
-            detection. I'm still working to deploy this project. It has been
-            my favourite!!
+            An end-to-end fraud detector trained on 284,807 real card
+            transactions, where only 0.17% are fraud. A model that calls
+            everything legitimate scores 99.8% accuracy and catches nothing,
+            so I evaluated with precision, recall, and PR-AUC instead.
+          </p>
+
+          <p>
+            I compared a logistic regression baseline with XGBoost, then served
+            the XGBoost model through a Flask API that validates input and lets
+            each request set its own risk threshold. On held-out data it caught
+            84% of fraud with 92% precision. It's been my favourite project!!
           </p>
 
           <div class="tags">
-            <span>In progress</span>
+            <span>Python</span>
+            <span>XGBoost</span>
+            <span>scikit-learn</span>
+            <span>Flask</span>
           </div>
 
           <a
@@ -378,7 +235,159 @@
             rel="noopener noreferrer"
             class="project-link"
           >
-            View project <span>↗</span>
+            View on GitHub <span>↗</span>
+          </a>
+        </article>
+
+        <article class="project-card current-project">
+          <div class="project-top">
+            <span class="project-icon">◎</span>
+            <span class="project-type">Robotics</span>
+          </div>
+
+          <h3>Rover Localization (UTRA)</h3>
+
+          <p>
+            Wheel odometry drifts over time, so the rover needs to fuse it with
+            other sensors to know where it is. I'm on the team writing our own
+            local and global Extended Kalman Filter in ROS 2 to replace
+            robot_localization.
+          </p>
+
+          <div class="tags">
+            <span>ROS 2</span>
+            <span>State estimation</span>
+            <span>In progress</span>
+          </div>
+
+          <a
+            href="https://github.com/dyounes07/timbot"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View on GitHub <span>↗</span>
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-icon">⌁</span>
+            <span class="project-type">Cybersecurity</span>
+          </div>
+
+          <h3>Attack Graph Tool</h3>
+
+          <p>
+            Models a network as a graph of systems and vulnerabilities. BFS
+            checks whether an attacker can get from one system to another and
+            finds the fewest-step attack path, and a custom influence score
+            (weighted degree × impact) ranks which nodes matter most to defend.
+          </p>
+
+          <div class="tags">
+            <span>Python</span>
+            <span>Graphs</span>
+            <span>BFS</span>
+          </div>
+
+          <a
+            href="https://github.com/dyounes07/attack-graph-tool"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View on GitHub <span>↗</span>
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-icon">λ</span>
+            <span class="project-type">Cryptography</span>
+          </div>
+
+          <h3>Quadratic Field Cryptography</h3>
+
+          <p>
+            Research on Diffie–Hellman in the class groups of imaginary
+            quadratic fields. We represented group elements as binary quadratic
+            forms and showed in SageMath that multiplying them is fast, while
+            reversing it (the discrete log problem) stays hard.
+          </p>
+
+          <div class="tags">
+            <span>SageMath</span>
+            <span>Number theory</span>
+            <span>LaTeX</span>
+          </div>
+
+          <a
+            href="https://github.com/dyounes07/iq-dh-sagemath"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View on GitHub <span>↗</span>
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-icon">◉</span>
+            <span class="project-type">Security</span>
+          </div>
+
+          <h3>Security Event Risk Dashboard</h3>
+
+          <p>
+            A Flask app for tracking security events and prioritizing them by
+            risk, so the most urgent ones surface first instead of getting lost
+            in raw logs.
+          </p>
+
+          <div class="tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>Data visualization</span>
+          </div>
+
+          <a
+            href="https://github.com/dyounes07/security-event-risk-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View on GitHub <span>↗</span>
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-icon">▦</span>
+            <span class="project-type">Game</span>
+          </div>
+
+          <h3>Battleship</h3>
+
+          <p>
+            A Java version of Battleship I built to practise object-oriented
+            design: modelling the board and ships, handling input, and making
+            sure simple rules behave correctly in every edge case.
+          </p>
+
+          <div class="tags">
+            <span>Java</span>
+            <span>OOP</span>
+          </div>
+
+          <a
+            href="https://github.com/dyounes07/battleship-game"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View on GitHub <span>↗</span>
           </a>
         </article>
       </div>
@@ -386,27 +395,29 @@
 
     <section id="skills" class="section-container section skills-section">
       <div class="section-heading">
-        <p class="eyebrow">03 / TOOLKIT</p>
-        <h2>Technologies I work with</h2>
+        <p class="eyebrow">Skills</p>
+        <h2>What I work with</h2>
       </div>
 
       <div class="skills-list">
         <div class="skill-group">
           <h3>Languages</h3>
-          <p>Python · Java · SQL · SageMath</p>
+          <p>Python, Java, SQL, JavaScript, SageMath</p>
         </div>
 
         <div class="skill-group">
-          <h3>Tools &amp; experience</h3>
-          <p>Git · GitHub · Linux · LaTeX · FTC Java SDK</p>
-        </div>
-
-        <div class="skill-group">
-          <h3>What I'm exploring</h3>
-
+          <h3>Frameworks and tools</h3>
           <p>
-            Software engineering · Cybersecurity · Cryptography · Graph theory
-            · Algorithms · Backend development
+            ROS 2, Flask, React, scikit-learn, XGBoost, pandas, NumPy, Git,
+            Linux, LaTeX
+          </p>
+        </div>
+
+        <div class="skill-group">
+          <h3>Learning right now</h3>
+          <p>
+            State estimation and Kalman filters, robot navigation, reading ML
+            research papers
           </p>
         </div>
       </div>
@@ -414,15 +425,14 @@
 
     <section id="contact" class="contact-section">
       <div class="section-container contact-content">
-        <p class="eyebrow">04 / CONTACT</p>
+        <p class="eyebrow">Contact</p>
 
-        <h2>Have a project, opportunity, or interesting problem?</h2>
+        <h2>Want to talk robots, security, or anything in between?</h2>
 
         <p>
-          I'm currently looking for software engineering and cybersecurity
-          internship opportunities. I'm always happy to connect with people
-          working on thoughtful technical projects, or anyone who enjoys talking
-          about cryptography, systems, and building things that actually work.
+          I'm looking for software engineering internships, especially in
+          robotics, security, or ML. I'm also always happy to chat about rovers,
+          cryptography, or a problem you're stuck on.
         </p>
 
         <div class="contact-actions">
@@ -430,7 +440,7 @@
             class="button button-primary"
             href="mailto:danayounes2016@gmail.com"
           >
-            Get in touch →
+            Email me
           </a>
 
           <a
@@ -457,7 +467,7 @@
 
   <footer class="footer section-container">
     <p>© 2026 Dana Younes</p>
-    <p>Built from scratch, debugged with patience.</p>
+    <p>Toronto, ON</p>
   </footer>
 
   <script src="script.js"></script>
