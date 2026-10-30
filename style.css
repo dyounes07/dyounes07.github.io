@@ -448,3 +448,19 @@ h2 {
   height: 40px;
   justify-content: center;
   width: 40
+
+  /* spacing between the two paragraphs in the featured fraud card */
+.project-card p + p {
+  margin-top: 12px;
+}
+
+/* the new code snippet in the hero card has longer lines,
+   so let them wrap instead of getting cut off */
+.code p {
+  overflow-wrap: anywhere;
+}
+
+/* eyebrow labels are sentence case now, so tighten the spacing a bit */
+.eyebrow {
+  letter-spacing: 0.06em;
+}
